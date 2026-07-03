@@ -1,0 +1,382 @@
+:root {
+  --bg: #0b0b0f;
+  --bg-soft: #12121a;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --text: #f5f2eb;
+  --muted: #a8a5a0;
+  --gold: #f3d28b;
+  --gold-soft: #ffe9b8;
+  --max-width: 1240px;
+  --radius: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  background: radial-gradient(circle at top, #171720 0%, #0b0b0f 45%);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  max-width: 900px;
+}
+
+.section-copy {
+  color: var(--muted);
+  max-width: 700px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  backdrop-filter: blur(16px);
+  background: rgba(11, 11, 15, 0.45);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  color: #d8d3cb;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  margin-bottom: 22px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.9;
+  max-width: 650px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #111;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(243, 210, 139, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.04);
+}
+
+.hero-note {
+  margin-top: 26px;
+  color: #c9c4bc;
+  font-size: 0.95rem;
+}
+
+.hero-canvas-wrap {
+  width: 100%;
+  height: 620px;
+  border-radius: 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), transparent 40%),
+    linear-gradient(180deg, #161620 0%, #0c0c11 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+}
+
+.services-grid {
+  display: grid;
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.service-card {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 30px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+  border: 1px solid var(--card-border);
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.service-visual {
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1), transparent 40%),
+    #101018;
+  min-height: 320px;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(243, 210, 139, 0.12);
+  color: var(--gold-soft);
+  border: 1px solid rgba(243, 210, 139, 0.25);
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.service-title {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.service-subtitle {
+  color: #ddd7cf;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.service-description {
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 620px;
+}
+
+.about-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 42px;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 30px;
+}
+
+.about-list {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+  color: #d8d3cb;
+  margin-top: 20px;
+}
+
+.about-list li {
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: fit-content;
+}
+
+.footer {
+  padding: 40px 0 60px;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 50px;
+}
+
+.loader {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1100px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid,
+  .service-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-canvas-wrap {
+    height: 500px;
+  }
+
+  .service-card {
+    min-height: auto;
+  }
+
+  .service-visual {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-links {
+    display: none;
+  }
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-canvas-wrap {
+    height: 380px;
+  }
+
+  .service-card {
+    padding: 18px;
+  }
+}
